@@ -3,113 +3,167 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Krushna Sharma | SRE & DevOps</title>
+<title>Krushna Sharma | SRE & DevOps (AWS)</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-
-<!-- ICONS -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-*{box-sizing:border-box;scroll-behavior:smooth;}
+*{box-sizing:border-box;}
 body{
   margin:0;
   font-family:'Inter',sans-serif;
   background:#f3f6fb;
-  color:#1f1f1f;
-  transition:.3s;
+  color:#0f172a;
 }
-body.dark{background:#0f172a;color:#e5e7eb;}
 
 header{
   background:#fff;
   border-bottom:1px solid #e5e7ef;
   position:sticky;
   top:0;
-  z-index:20;
+  z-index:10;
 }
-body.dark header{background:#111b33;border-color:#1f2a44;}
-
-.container{max-width:1100px;margin:auto;padding:0 18px;}
-
+.container{
+  max-width:1150px;
+  margin:auto;
+  padding:0 18px;
+}
 nav{
-  height:70px;
+  height:72px;
   display:flex;
-  justify-content:space-between;
   align-items:center;
+  justify-content:space-between;
 }
-nav a{margin-left:16px;text-decoration:none;color:inherit;font-weight:500;}
-nav a:hover{color:#3e5bff;}
-
-.toggle{cursor:pointer;font-size:20px;margin-left:15px;}
+.logo{
+  font-size:20px;
+  font-weight:800;
+}
+nav a{
+  margin-left:18px;
+  text-decoration:none;
+  color:#0f172a;
+}
+nav a:hover{
+  color:#3b5bff;
+}
 
 .hero{
-  background:linear-gradient(130deg,#eef3ff,#dde7ff);
+  background:linear-gradient(140deg,#f7f9ff,#e7edff);
   padding:60px 0;
 }
-body.dark .hero{background:linear-gradient(130deg,#111b33,#0f172a);}
-
 .hero-grid{
   display:grid;
   grid-template-columns:1.2fr .8fr;
-  gap:20px;
   align-items:center;
 }
 
-.subtitle{color:#3555ff;font-weight:700;}
-body.dark .subtitle{color:#7ea2ff;}
-
-h1{font-size:42px;margin:8px 0 12px;}
-
-.actions{margin-top:16px;}
-.btn{
-  padding:10px 18px;
-  border-radius:999px;
-  border:2px solid transparent;
-  text-decoration:none;
-  font-weight:600;
-  margin-right:8px;
+.subtitle{
+  color:#3b5bff;
+  font-weight:700;
 }
-.primary{background:#3b52ff;color:#fff;}
-.primary:hover{filter:brightness(1.1);}
-.ghost{background:#fff;border-color:#d8dcff;}
-body.dark .ghost{background:#111b33;color:#fff;border-color:#324272;}
+h1{
+  font-size:42px;
+  margin:10px 0 10px;
+}
+.hero p{
+  max-width:600px;
+  line-height:1.7;
+  color:#334155;
+}
 
-.photo-box{display:flex;justify-content:center;}
+.actions{
+  margin-top:20px;
+}
+.btn{
+  padding:12px 18px;
+  border-radius:10px;
+  font-weight:600;
+  border:none;
+  text-decoration:none;
+  margin-right:10px;
+  cursor:pointer;
+}
+.primary{
+  background:#2a4bff;
+  color:#fff;
+}
+.outline{
+  background:#fff;
+  border:1px solid #d4dbff;
+}
+
+.photo-box{
+  display:flex;
+  justify-content:center;
+}
 .photo{
-  width:260px;height:260px;
+  width:260px;
+  height:260px;
   border-radius:50%;
   object-fit:cover;
-  border:6px solid #fff;
-  box-shadow:0 18px 35px rgba(0,0,0,.15);
+  border:8px solid #fff;
+  box-shadow:0 20px 45px rgba(0,0,0,.15);
 }
 
-section{padding:40px 0;}
+/* SECTION */
+section{
+  padding:45px 0;
+}
 
 .card{
   background:#fff;
   border-radius:18px;
+  box-shadow:0 20px 40px rgba(0,0,0,.08);
   padding:22px;
-  box-shadow:0 15px 30px rgba(0,0,0,.06);
 }
-body.dark .card{background:#111b33;box-shadow:none;}
 
-.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-
-.skills span{
-  background:#e7ebff;
-  padding:6px 12px;
-  border-radius:12px;
-  margin:6px;
-  display:inline-block;
+.projects{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
 }
-body.dark .skills span{background:#1d2b4f;}
 
-footer{text-align:center;padding:22px 0;}
+.project-icon{
+  font-size:40px;
+  margin-bottom:10px;
+}
 
-@media(max-width:900px){
-  .hero-grid{grid-template-columns:1fr;}
-  .projects{grid-template-columns:1fr;}
+.section-title{
+  font-size:22px;
+  margin-bottom:12px;
+}
+.divider-title{
+  border-bottom:3px solid #dbe3ff;
+  width:160px;
+  padding-bottom:4px;
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+input,textarea{
+  width:100%;
+  padding:10px;
+  border-radius:10px;
+  border:1px solid #d3d3d3;
+}
+button{
+  padding:10px 18px;
+  border-radius:10px;
+  border:none;
+  background:#2a4bff;
+  color:#fff;
+  font-weight:700;
+}
+
+footer{
+  text-align:center;
+  color:#6b7280;
+  padding:25px 0;
 }
 </style>
 </head>
@@ -119,122 +173,130 @@ footer{text-align:center;padding:22px 0;}
 <header>
  <div class="container">
   <nav>
-    <div class="logo">Krushna Sharma</div>
+   <div class="logo">Krushna Sharma</div>
 
-    <div>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-
-      <!-- DARK MODE -->
-      <span class="toggle" onclick="toggleMode()">
-        <i class="fa-solid fa-moon"></i>
-      </span>
-
-      <!-- SOCIAL ICONS -->
-      <a href="https://github.com/krushna1512" target="_blank">
-        <i class="fab fa-github"></i>
-      </a>
-
-      <a href="https://www.linkedin.com/in/krushna-sharma-774633140/" target="_blank">
-        <i class="fab fa-linkedin"></i>
-      </a>
-    </div>
+   <div>
+    <a href="#">Home</a>
+    <a href="#about">About Me</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <a href="https://github.com/krushna1512" target="_blank"><i class="fab fa-github"></i></a>
+   </div>
   </nav>
  </div>
 </header>
 
 <section class="hero">
-<div class="container hero-grid">
+ <div class="container hero-grid">
 
   <div>
-    <div class="subtitle">Site Reliability Engineer / DevOps (AWS)</div>
-    <h1>Hi, I'm Krushna Sharma</h1>
+   <p class="subtitle">Site Reliability Engineer / DevOps (AWS)</p>
 
-    <p>
-      SRE & DevOps specialist with experience in AWS infrastructure, CI/CD automation,
-      observability & scalable systems.
-    </p>
+   <h1>Hi, I'm Krushna Sharma</h1>
 
-    <div class="actions">
-      <a class="btn primary" href="#projects">View My Projects</a>
-      <a class="btn ghost" href="resume.pdf" download>Download Resume</a>
-    </div>
+   <p>
+     Site Reliability Engineer (SRE) & DevOps specialist with
+     extensive experience managing AWS infrastructure, CI/CD pipelines,
+     monitoring, logging and system reliability.
+   </p>
+
+   <div class="actions">
+    <a class="btn primary" href="#projects">View My Projects</a>
+    <a class="btn outline" href="#contact">Contact Me</a>
+   </div>
   </div>
 
   <div class="photo-box">
-    <!-- YOUR PHOTO -->
-    <img src="profile.png" class="photo">
+   <img src="profile.png" class="photo">
   </div>
 
-</div>
+ </div>
 </section>
 
 <section id="about">
  <div class="container">
-  <div class="card">
-    <h2>About Me</h2>
-    <p>
-      I work with AWS, Docker, Kubernetes, GitHub Actions & monitoring tools like Grafana + Loki.
-    </p>
-  </div>
- </div>
-</section>
+  <h2 class="divider-title">About Me</h2>
 
-<section id="skills">
- <div class="container">
-  <h2>Skills</h2>
-  <div class="card skills">
-    <span>AWS</span><span>Docker</span><span>Kubernetes</span>
-    <span>GitHub Actions</span><span>CloudFormation</span>
-    <span>Grafana</span><span>Loki</span><span>CI/CD</span>
+  <div class="card">
+   <p>
+     I’m a Site Reliability Engineer and DevOps specialist with experience in AWS cloud
+     infrastructure, CI/CD automation, monitoring & observability, and system reliability.
+   </p>
   </div>
  </div>
 </section>
 
 <section id="projects">
  <div class="container">
-  <h2>Recent Projects</h2>
+  <h2 class="divider-title">Recent Projects</h2>
 
   <div class="projects">
-    <div class="card"><h3>AWS Cost Optimization</h3><p>Reduced AWS costs by 20%.</p></div>
-    <div class="card"><h3>CI/CD Automation</h3><p>Built GitHub Actions pipelines.</p></div>
-    <div class="card"><h3>Monitoring Platform</h3><p>Grafana + Loki dashboards.</p></div>
+
+   <div class="card">
+    <i class="fa-solid fa-gear project-icon"></i>
+    <h3>AWS Cost Optimization</h3>
+    <p>Reduced AWS costs by 20% through rightsizing & RI planning.</p>
+   </div>
+
+   <div class="card">
+    <i class="fa-brands fa-github project-icon"></i>
+    <h3>GitHub Actions CI/CD</h3>
+    <p>Automated build, testing & deployments with Blue-Green strategy.</p>
+   </div>
+
+   <div class="card">
+    <i class="fa-solid fa-chart-line project-icon"></i>
+    <h3>Centralized Monitoring</h3>
+    <p>Developed Grafana + Loki dashboards for API performance tracking.</p>
+   </div>
+
   </div>
  </div>
 </section>
 
 <section id="contact">
  <div class="container">
-  <div class="card">
-    <h2>Contact Me</h2>
+  <h2 class="divider-title">Contact</h2>
 
+  <div class="contact-grid">
+
+   <div class="card">
     <p><i class="fa-solid fa-phone"></i> +91 7385797300</p>
     <p><i class="fa-solid fa-envelope"></i> krishna.sharma042@gmail.com</p>
+    <p><i class="fa-solid fa-location-dot"></i> Malegaon, Maharashtra</p>
 
-    <form action="https://formsubmit.co/krishna.sharma042@gmail.com" method="POST">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="text" name="name" placeholder="Name" required><br><br>
-      <input type="email" name="email" placeholder="Email" required><br><br>
-      <textarea name="message" rows="4" placeholder="Message" required></textarea><br><br>
-      <button type="submit">Send Message</button>
+    <p><i class="fab fa-github"></i> github.com/krushna1512</p>
+    <p><i class="fab fa-linkedin"></i> linkedin.com/in/krushna-sharma-774633140/</p>
+   </div>
+
+   <div class="card">
+    <form action="https://formsubmit.co/YOUR_EMAIL" method="POST">
+     <input type="hidden" name="_captcha" value="false">
+
+     <label>Name</label>
+     <input type="text" name="name" required>
+
+     <label>Email</label>
+     <input type="email" name="email" required>
+
+     <label>Message</label>
+     <textarea name="message" rows="4" required></textarea>
+
+     <br><br>
+     <button type="submit">Send Message</button>
     </form>
+   </div>
 
   </div>
  </div>
 </section>
 
 <footer>
- © <span id="year"></span> Krushna Sharma
+ © <span id="year"></span> Krushna Sharma — All Rights Reserved
 </footer>
 
 <script>
 document.getElementById("year").innerText = new Date().getFullYear();
-
-function toggleMode(){
- document.body.classList.toggle("dark");
-}
 </script>
 
 </body>
