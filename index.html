@@ -590,6 +590,58 @@
     html {
       scroll-behavior: smooth;
     }
+
+    /* ---------------- NEW: SKILLS SECTION CSS ---------------- */
+    .skills-grid{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:1.25rem;
+    margin-top:1.25rem;
+    }
+
+    .skill-card{
+    background:var(--glass-bg);
+    border:1px solid var(--glass-border);
+    border-radius:1.2rem;
+    padding:1.2rem;
+    text-align:center;
+    box-shadow:var(--shadow-light);
+    backdrop-filter:blur(15px);
+    opacity:0;
+    transform:translateY(20px);
+    animation:fadeInUp .6s ease-out forwards;
+    }
+
+    .skill-icon{
+    width:56px;
+    height:56px;
+    border-radius:50%;
+    margin:auto auto .6rem;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:1.4rem;
+    background:rgba(37,99,235,.18);
+    color:var(--primary);
+    animation:iconPulse 2s infinite;
+    }
+
+    @keyframes iconPulse{
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.12)}
+    }
+
+    .skill-card:hover{
+    transform:translateY(-8px) scale(1.02);
+    border-color:rgba(37,99,235,.45);
+    }
+
+    /* Responsive */
+    @media(max-width:900px){.skills-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:640px){.skills-grid{grid-template-columns:1fr}}
+
+    /* ---------------- END SKILLS CSS ---------------- */
+
   </style>
 </head>
 <body>
@@ -653,6 +705,72 @@
         I'm a Site Reliability Engineer and DevOps specialist with extensive experience managing AWS cloud infrastructure, automating CI/CD pipelines, and implementing robust monitoring and security practices. 
         I work with services such as EC2, ECS, S3, Lambda, and CloudWatch along with Docker, Kubernetes, and IaC using Terraform and CloudFormation.
       </div>
+    </section>
+
+     <!-- NEW — SKILLS SECTION -->
+    <section id="skills">
+        <h2 class="section-title">Skills</h2>
+        <div class="section-underline"></div>
+
+        <div class="skills-grid">
+
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fa-brands fa-linux"></i></div>Linux
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fa-brands fa-aws"></i></div>AWS
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fa-brands fa-git-alt"></i></div>Git
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fa-brands fa-github"></i></div>GitHub Actions
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fa-brands fa-docker"></i></div>Docker
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fa-solid fa-network-wired"></i></div>Kubernetes
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fa-solid fa-cloud"></i></div>CloudFormation
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fa-solid fa-chart-line"></i></div>Grafana
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fa-solid fa-fire"></i></div>Prometheus
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fa-solid fa-book-atlas"></i></div>Loki
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>Blackbox
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fa-solid fa-dog"></i></div>Datadog
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fa-solid fa-eye"></i></div>CloudWatch
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>Root Cause Analysis
+        </div>
+
+        </div>
     </section>
 
     <!-- Projects -->
