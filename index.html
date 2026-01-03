@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Krushna Sharma | SRE & DevOps Engineer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Krushna Sharma | SRE & DevOps</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<!-- ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 *{box-sizing:border-box;scroll-behavior:smooth;}
@@ -14,106 +17,71 @@ body{
   font-family:'Inter',sans-serif;
   background:#f3f6fb;
   color:#1f1f1f;
-  transition:background .3s,color .3s;
+  transition:.3s;
 }
-body.dark{
-  background:#0e1525;
-  color:#e6e6e6;
-}
+body.dark{background:#0f172a;color:#e5e7eb;}
 
 header{
-  background:#ffffff;
+  background:#fff;
   border-bottom:1px solid #e5e7ef;
   position:sticky;
   top:0;
   z-index:20;
-  transition:background .3s;
 }
-body.dark header{
-  background:#131b2f;
-  border-color:#1f2a44;
-}
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:0 18px;
-}
+body.dark header{background:#111b33;border-color:#1f2a44;}
+
+.container{max-width:1100px;margin:auto;padding:0 18px;}
+
 nav{
   height:70px;
   display:flex;
   justify-content:space-between;
   align-items:center;
 }
-.logo{
-  font-size:22px;
-  font-weight:800;
-}
-nav a{
-  margin-left:16px;
-  text-decoration:none;
-  color:inherit;
-  font-weight:500;
-}
+nav a{margin-left:16px;text-decoration:none;color:inherit;font-weight:500;}
 nav a:hover{color:#3e5bff;}
-.toggle{
-  cursor:pointer;
-  padding:6px 12px;
-  border-radius:999px;
-  border:1px solid #ccc;
-}
-body.dark .toggle{border-color:#3b4b7a;}
+
+.toggle{cursor:pointer;font-size:20px;margin-left:15px;}
 
 .hero{
-  background:linear-gradient(120deg,#f7f9ff,#eaf0ff);
+  background:linear-gradient(130deg,#eef3ff,#dde7ff);
   padding:60px 0;
-  transition:.3s;
 }
-body.dark .hero{
-  background:linear-gradient(120deg,#0e1525,#141e33);
-}
+body.dark .hero{background:linear-gradient(130deg,#111b33,#0f172a);}
+
 .hero-grid{
   display:grid;
-  grid-template-columns:1.2fr 0.8fr;
+  grid-template-columns:1.2fr .8fr;
   gap:20px;
   align-items:center;
 }
 
-.subtitle{
-  color:#3555ff;
-  font-weight:700;
-}
-body.dark .subtitle{color:#8da4ff;}
+.subtitle{color:#3555ff;font-weight:700;}
+body.dark .subtitle{color:#7ea2ff;}
 
-.fade{opacity:0;transform:translateY(20px);transition:.6s;}
-.fade.show{opacity:1;transform:none;}
-
-h1{font-size:40px;margin-bottom:10px;}
+h1{font-size:42px;margin:8px 0 12px;}
 
 .actions{margin-top:16px;}
 .btn{
-  display:inline-block;
   padding:10px 18px;
   border-radius:999px;
-  font-weight:600;
-  text-decoration:none;
   border:2px solid transparent;
+  text-decoration:none;
+  font-weight:600;
   margin-right:8px;
 }
-.primary{background:#3c52ff;color:#fff;}
+.primary{background:#3b52ff;color:#fff;}
 .primary:hover{filter:brightness(1.1);}
-.ghost{background:#fff;border:2px solid #d5d9ff;}
-.ghost:hover{border-color:#b4b9ff;}
-
-body.dark .ghost{background:#0e1525;border-color:#384a7a;color:#fff;}
+.ghost{background:#fff;border-color:#d8dcff;}
+body.dark .ghost{background:#111b33;color:#fff;border-color:#324272;}
 
 .photo-box{display:flex;justify-content:center;}
 .photo{
-  width:260px;
-  height:260px;
+  width:260px;height:260px;
   border-radius:50%;
   object-fit:cover;
-  border:7px solid #fff;
-  box-shadow:0 20px 40px rgba(0,0,0,.18);
+  border:6px solid #fff;
+  box-shadow:0 18px 35px rgba(0,0,0,.15);
 }
 
 section{padding:40px 0;}
@@ -123,50 +91,25 @@ section{padding:40px 0;}
   border-radius:18px;
   padding:22px;
   box-shadow:0 15px 30px rgba(0,0,0,.06);
-  margin-bottom:16px;
-  transition:.3s;
 }
-body.dark .card{
-  background:#131b2f;
-  box-shadow:none;
-}
+body.dark .card{background:#111b33;box-shadow:none;}
+
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
 
 .skills span{
-  display:inline-block;
+  background:#e7ebff;
   padding:6px 12px;
   border-radius:12px;
-  background:#e9ecff;
   margin:6px;
-  font-weight:600;
+  display:inline-block;
 }
-body.dark .skills span{background:#243056;}
+body.dark .skills span{background:#1d2b4f;}
 
-.projects{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px;
-}
+footer{text-align:center;padding:22px 0;}
 
-footer{
-  text-align:center;
-  padding:22px 0;
-  color:#666;
-}
-body.dark footer{color:#9ea9d6;}
-
-input,textarea{
-  width:100%;
-  padding:10px;
-  border-radius:10px;
-  border:1px solid #ccc;
-}
-button{
-  padding:10px 16px;
-  border-radius:12px;
-  border:none;
-  background:#3c52ff;
-  color:#fff;
-  font-weight:700;
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;}
+  .projects{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -174,143 +117,124 @@ button{
 <body>
 
 <header>
-  <div class="container">
-    <nav>
-      <div class="logo">Krushna Sharma</div>
-      <div>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-        <span class="toggle" onclick="toggleMode()">🌙</span>
-      </div>
-    </nav>
-  </div>
+ <div class="container">
+  <nav>
+    <div class="logo">Krushna Sharma</div>
+
+    <div>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+
+      <!-- DARK MODE -->
+      <span class="toggle" onclick="toggleMode()">
+        <i class="fa-solid fa-moon"></i>
+      </span>
+
+      <!-- SOCIAL ICONS -->
+      <a href="https://github.com/krushna1512" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+
+      <a href="https://www.linkedin.com/in/krushna-sharma-774633140/" target="_blank">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
+  </nav>
+ </div>
 </header>
 
 <section class="hero">
-  <div class="container hero-grid fade">
-    <div>
-      <div class="subtitle">Site Reliability Engineer / DevOps (AWS)</div>
-      <h1>Hi, I'm Krushna Sharma</h1>
-      <p>
-        SRE & DevOps specialist experienced in AWS cloud, CI/CD pipelines,
-        observability, automation & scalable infrastructure.
-      </p>
+<div class="container hero-grid">
 
-      <div class="actions">
-        <a class="btn primary" href="#projects">View My Projects</a>
-        <a class="btn ghost" href="resume.pdf" download>Download Resume</a>
-      </div>
-    </div>
+  <div>
+    <div class="subtitle">Site Reliability Engineer / DevOps (AWS)</div>
+    <h1>Hi, I'm Krushna Sharma</h1>
 
-    <div class="photo-box">
-      <img src="profile.jpg" class="photo">
+    <p>
+      SRE & DevOps specialist with experience in AWS infrastructure, CI/CD automation,
+      observability & scalable systems.
+    </p>
+
+    <div class="actions">
+      <a class="btn primary" href="#projects">View My Projects</a>
+      <a class="btn ghost" href="resume.pdf" download>Download Resume</a>
     </div>
   </div>
+
+  <div class="photo-box">
+    <!-- YOUR PHOTO -->
+    <img src="profile.png" class="photo">
+  </div>
+
+</div>
 </section>
 
 <section id="about">
-  <div class="container fade">
-    <div class="card">
-      <h2>About Me</h2>
-      <p>
-        I work with AWS, ECS, Docker, Kubernetes, GitHub Actions and monitoring stacks like Grafana & Loki.
-        Passionate about performance, scalability & reliability.
-      </p>
-    </div>
+ <div class="container">
+  <div class="card">
+    <h2>About Me</h2>
+    <p>
+      I work with AWS, Docker, Kubernetes, GitHub Actions & monitoring tools like Grafana + Loki.
+    </p>
   </div>
+ </div>
 </section>
 
 <section id="skills">
-  <div class="container fade">
-    <h2>Skills</h2>
-    <div class="card skills">
-      <span>AWS</span>
-      <span>Docker</span>
-      <span>Kubernetes</span>
-      <span>GitHub Actions</span>
-      <span>CloudFormation</span>
-      <span>Grafana</span>
-      <span>Loki</span>
-      <span>CI/CD</span>
-      <span>Linux</span>
-    </div>
+ <div class="container">
+  <h2>Skills</h2>
+  <div class="card skills">
+    <span>AWS</span><span>Docker</span><span>Kubernetes</span>
+    <span>GitHub Actions</span><span>CloudFormation</span>
+    <span>Grafana</span><span>Loki</span><span>CI/CD</span>
   </div>
+ </div>
 </section>
 
 <section id="projects">
-  <div class="container fade">
-    <h2>Recent Projects</h2>
-    <div class="projects">
+ <div class="container">
+  <h2>Recent Projects</h2>
 
-      <div class="card">
-        <h3>AWS Cost Optimization</h3>
-        <p>Reduced AWS costs by 20% via Trusted Advisor & rightsizing.</p>
-      </div>
-
-      <div class="card">
-        <h3>CI/CD Automation</h3>
-        <p>Built secure GitHub Actions pipelines with Blue-Green deployment.</p>
-      </div>
-
-      <div class="card">
-        <h3>Observability Platform</h3>
-        <p>Centralized logging & dashboards via Grafana, Loki & CloudWatch.</p>
-      </div>
-
-    </div>
+  <div class="projects">
+    <div class="card"><h3>AWS Cost Optimization</h3><p>Reduced AWS costs by 20%.</p></div>
+    <div class="card"><h3>CI/CD Automation</h3><p>Built GitHub Actions pipelines.</p></div>
+    <div class="card"><h3>Monitoring Platform</h3><p>Grafana + Loki dashboards.</p></div>
   </div>
+ </div>
 </section>
 
 <section id="contact">
-  <div class="container fade">
-    <div class="card">
-      <h2>Contact Me</h2>
+ <div class="container">
+  <div class="card">
+    <h2>Contact Me</h2>
 
-      <form action="https://formsubmit.co/your@email.com" method="POST">
-        <input type="hidden" name="_captcha" value="false">
+    <p><i class="fa-solid fa-phone"></i> +91 7385797300</p>
+    <p><i class="fa-solid fa-envelope"></i> krishna.sharma042@gmail.com</p>
 
-        <label>Name</label>
-        <input type="text" name="name" required>
+    <form action="https://formsubmit.co/krishna.sharma042@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="name" placeholder="Name" required><br><br>
+      <input type="email" name="email" placeholder="Email" required><br><br>
+      <textarea name="message" rows="4" placeholder="Message" required></textarea><br><br>
+      <button type="submit">Send Message</button>
+    </form>
 
-        <label>Email</label>
-        <input type="email" name="email" required>
-
-        <label>Message</label>
-        <textarea name="message" rows="4" required></textarea>
-
-        <br><br>
-        <button type="submit">Send Message</button>
-      </form>
-
-      <p><br>
-        📧 krishna.sharma042@gmail.com<br>
-        🔗 <a href="https://github.com/krushna1512" target="_blank">GitHub</a><br>
-        🔗 <a href="https://www.linkedin.com/in/krushna-sharma-774633140/" target="_blank">LinkedIn</a>
-      </p>
-    </div>
   </div>
+ </div>
 </section>
 
 <footer>
-  © <span id="year"></span> Krushna Sharma — Built with ❤
+ © <span id="year"></span> Krushna Sharma
 </footer>
 
 <script>
 document.getElementById("year").innerText = new Date().getFullYear();
 
 function toggleMode(){
-  document.body.classList.toggle("dark");
+ document.body.classList.toggle("dark");
 }
-
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){entry.target.classList.add("show");}
-  });
-},{threshold:.2});
-
-document.querySelectorAll(".fade").forEach(el=>observer.observe(el));
 </script>
 
 </body>
