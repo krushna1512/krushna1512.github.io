@@ -1264,7 +1264,7 @@
 
         <!-- Projects -->
         <section id="projects">
-            <h2 class="section-title">Recent Projects</h2>
+            <h2 class="section-title">Recent Work</h2>
             <div class="section-underline"></div>
 
             <div class="cards">
@@ -1275,11 +1275,12 @@
                         </div>
                         <h3>AWS Cost Optimization</h3>
                         <p>
-                            Implemented AWS cost-optimization strategies, reducing monthly cloud spend by up to 20%
-                            while improving resource utilization and reliability.
+                            Implemented AWS cost-optimization strategies that reduced monthly cloud spend by up to 20%
+                            while improving resource utilization and system reliability. I also automated the shutdown
+                            of the development and staging environments during non-working hours and created an API so
+                            the Dev and QA teams can start them in case of an emergency.
                         </p>
                     </div>
-                    <a href="#"><i class="fa-solid fa-arrow-right"></i> View Details</a>
                 </article>
 
                 <article class="card">
@@ -1287,13 +1288,14 @@
                         <div class="card-icon">
                             <i class="fa-solid fa-cogs"></i>
                         </div>
-                        <h3>GitHub Actions CI/CD</h3>
+                        <h3>Deployment Alerts and Testing</h3>
                         <p>
-                            Designed and deployed CI/CD pipelines using GitHub Actions to automate build, test, and
-                            deployment workflows for microservices.
+                            Improved deployment reliability by enhancing the workflow with Redmine notifications
+                            (deployer, commit ID, logs) and automated post-deployment health checks. If the production
+                            site fails to return a 200 status code after deployment, the system automatically triggers a
+                            rollback.
                         </p>
                     </div>
-                    <a href="#"><i class="fa-solid fa-arrow-right"></i> View Details</a>
                 </article>
 
                 <article class="card">
@@ -1301,13 +1303,15 @@
                         <div class="card-icon">
                             <i class="fa-solid fa-chart-line"></i>
                         </div>
-                        <h3>Monitoring Dashboards</h3>
+                        <h3>Alerting and Logging Dashboards</h3>
                         <p>
-                            Built real-time monitoring dashboards with Grafana and Prometheus to deliver production
-                            insights and improve observability.
+                            Recently, we migrated to a new vendor that provides our servers. However, the new vendor did
+                            not offer any logging, alerting, or monitoring mechanisms. I implemented a complete
+                            monitoring stack from scratch using Grafana, Prometheus, Loki, and Blackbox to track
+                            production-level issues and improve visibility. This setup also helps developers quickly
+                            identify and troubleshoot the root cause of issues.
                         </p>
                     </div>
-                    <a href="#"><i class="fa-solid fa-arrow-right"></i> View Details</a>
                 </article>
             </div>
         </section>
