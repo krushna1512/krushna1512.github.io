@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome | Your Name</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #1c1c1c;
+      background: #f5f7fb;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* Layout */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 64px;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.25rem;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links a {
+      margin-left: 1.25rem;
+      font-weight: 500;
+      opacity: 0.85;
+    }
+    .nav-links a:hover { opacity: 1; }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: center;
+      padding: 3rem 0 3.5rem;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      background: #e9edff;
+      color: #3c52ff;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      line-height: 1.2;
+      margin: 0 0 1rem;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      max-width: 650px;
+      margin-bottom: 1.5rem;
+    }
+
+    .actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.75rem 1.25rem;
+      border-radius: 999px;
+      font-weight: 600;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #6c63ff, #5a54ff);
+      color: #fff;
+    }
+    .btn-primary:hover { filter: brightness(1.05); }
+
+    .btn-ghost {
+      border-color: rgba(0,0,0,0.12);
+      background: #fff;
+    }
+    .btn-ghost:hover { border-color: rgba(0,0,0,0.25); }
+
+    .hero-graphic {
+      width: 100%;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #6c63ff, #9d8cff);
+      min-height: 240px;
+      box-shadow: 0 25px 45px rgba(0,0,0,0.12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      filter: blur(2px);
+    }
+
+    .bubble:nth-child(1) { width: 140px; height: 140px; top: 20px; left: 20px; }
+    .bubble:nth-child(2) { width: 100px; height: 100px; bottom: 40px; right: 60px; }
+    .bubble:nth-child(3) { width: 75px; height: 75px; top: 70px; right: 40px; }
+
+    /* Sections */
+    section {
+      padding: 2.5rem 0;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    .card {
+      border-radius: 20px;
+      background: #fff;
+      padding: 1.5rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    }
+
+    footer {
+      padding: 2rem 0;
+      text-align: center;
+      color: #555;
+    }
+
+    @media (min-width: 768px) {
+      .hero {
+        grid-template-columns: 1.1fr 0.9fr;
+        padding: 4rem 0 4.5rem;
+      }
+      .hero h1 { font-size: 3rem; }
+      .card-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Your Name</div>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <div class="badge">👋 Hello, I’m</div>
+        <h1>Your Name</h1>
+        <p>
+          A short, punchy introduction about who you are and what you do.
+          Mention your field (e.g. Developer, Designer, DevOps Engineer) and
+          what you’re passionate about.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#projects">View My Work</a>
+          <a class="btn btn-ghost" href="#contact">Contact Me</a>
+        </div>
+      </div>
+      <div class="hero-graphic">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <div class="card">
+        <p>
+          Write a friendly paragraph about your background, experience and the
+          kind of work you enjoy. You can also mention tools, technologies and
+          interests. Keep it simple and human.
+        </p>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Project One</h3>
+          <p>
+            Short description of the project. What it does, and what makes it
+            interesting.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Project Two</h3>
+          <p>
+            Short description of the project. What it does, and what makes it
+            interesting.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Project Three</h3>
+          <p>
+            Short description of the project. What it does, and what makes it
+            interesting.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="card">
+        <p>You can reach me at:</p>
+        <ul>
+          <li>Email: your@email.com</li>
+          <li>GitHub: github.com/yourusername</li>
+          <li>LinkedIn: linkedin.com/in/yourprofile</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Your Name — Built with ❤ on GitHub Pages
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
