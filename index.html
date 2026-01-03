@@ -643,12 +643,14 @@
     /* ---------------- END SKILLS CSS ---------------- */
 
     /* ---- MY JOURNEY TIMELINE ---- */
+
     .timeline{
     position:relative;
     margin-top:1.8rem;
     padding-left:25px;
     }
 
+    /* animated timeline line */
     .timeline::before{
     content:'';
     position:absolute;
@@ -658,20 +660,31 @@
     height:100%;
     background:linear-gradient(var(--primary), var(--primary-dark));
     border-radius:999px;
+    animation:lineGlow 3s ease-in-out infinite alternate;
     }
 
+    @keyframes lineGlow{
+    from{ box-shadow:0 0 4px rgba(37,99,235,.5)}
+    to{ box-shadow:0 0 16px rgba(37,99,235,.8)}
+    }
+
+    /* timeline item animation */
     .timeline-item{
     position:relative;
     margin-bottom:1.8rem;
     opacity:0;
-    transform:translateY(18px);
-    animation:fadeInUp .6s ease forwards;
+    transform:translateY(25px);
     }
 
-    .timeline-item:nth-child(1){animation-delay:.1s}
-    .timeline-item:nth-child(2){animation-delay:.2s}
-    .timeline-item:nth-child(3){animation-delay:.3s}
+    .timeline-item.visible{
+    animation:fadeInUp .7s ease forwards;
+    }
 
+    @keyframes fadeInUp{
+    to{ opacity:1; transform:translateY(0); }
+    }
+
+    /* animated dot */
     .timeline-dot{
     position:absolute;
     left:-2px;
@@ -680,49 +693,81 @@
     border-radius:50%;
     background:var(--bg-secondary);
     border:3px solid var(--primary);
-    box-shadow:0 0 8px rgba(37,99,235,.4);
+    box-shadow:0 0 10px rgba(37,99,235,.5);
+    animation:pulseDot 2s infinite;
     }
 
+    @keyframes pulseDot{
+    0%,100%{ transform:scale(1)}
+    50%{ transform:scale(1.2)}
+    }
+
+    /* card style */
     .timeline-content{
     background:var(--glass-bg);
     border:1px solid var(--glass-border);
     border-radius:1.3rem;
-    padding:1.2rem 1.3rem;
+    padding:1.3rem 1.4rem 1.2rem;
     box-shadow:var(--shadow-light);
     backdrop-filter:blur(15px);
+    position:relative;
     }
 
-    .timeline-content h3{
-    margin-bottom:.2rem;
-    font-size:1.05rem;
-    }
-
-    .timeline-content h4{
+    /* company icon bubble */
+    .company-icon{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:rgba(37,99,235,.18);
     color:var(--primary);
-    font-size:.92rem;
-    margin-bottom:.4rem;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:1.2rem;
+    margin-bottom:.6rem;
+    animation:iconFloat 3s infinite ease-in-out;
     }
+
+    @keyframes iconFloat{
+    0%,100%{ transform:translateY(0)}
+    50%{ transform:translateY(-6px)}
+    }
+
+    .timeline-content h3{margin-bottom:.25rem}
+    .timeline-content h4{color:var(--primary);margin-bottom:.4rem;font-size:.95rem}
 
     .timeline-content p{
+    margin-bottom:.25rem;
     font-size:.9rem;
     color:var(--text-secondary);
-    margin-bottom:.25rem;
     }
 
-    .timeline-content i{
-    color:var(--primary);
-    margin-right:.4rem;
-    }
+    .timeline-content i{color:var(--primary);margin-right:.4rem}
 
     /* Mobile */
     @media(max-width:640px){
     .timeline{padding-left:20px}
-    .timeline-content{padding:1rem}
+    .timeline-content{padding:1.1rem}
     }
+
 
 
   </style>
 </head>
+<script>
+const journeyItems = document.querySelectorAll('.timeline-item');
+
+const journeyObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+},{threshold:0.2});
+
+journeyItems.forEach(item=>journeyObserver.observe(item));
+</script>
+
 <body>
   <!-- Glassmorphism Navbar -->
   <header>
@@ -731,6 +776,7 @@
       <div class="nav-right">
         <a href="#home" class="active"><i class="fa-solid fa-house"></i> Home</a>
         <a href="#about"><i class="fa-solid fa-user"></i> About</a>
+        <a href="#journey"><i class="fa-solid fa-timeline"></i> My Journey</a>
         <a href="#projects"><i class="fa-solid fa-diagram-project"></i> Projects</a>
         <a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
         <button class="theme-toggle" title="Toggle Dark Mode" aria-label="Toggle dark mode">
@@ -859,9 +905,13 @@
 
     <div class="timeline">
 
+        <!-- Yapsody -->
         <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-content">
+            <div class="company-icon">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+            </div>
             <h3>Site Reliability Engineer</h3>
             <h4>Yapsody India Pvt. Ltd.</h4>
             <p class="time"><i class="fa-regular fa-clock"></i> Jun 2023 – Present</p>
@@ -869,9 +919,13 @@
         </div>
         </div>
 
+        <!-- Aretove -->
         <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-content">
+            <div class="company-icon">
+            <i class="fa-solid fa-diagram-project"></i>
+            </div>
             <h3>System Engineer</h3>
             <h4>Aretove Technologies</h4>
             <p class="time"><i class="fa-regular fa-clock"></i> Oct 2021 – Mar 2023</p>
@@ -881,7 +935,6 @@
 
     </div>
     </section>
-
 
     <!-- Projects -->
     <section id="projects">
@@ -946,24 +999,6 @@
           </div>
         </div>
 
-        <form class="contact-form">
-          <div class="form-row">
-            <label for="name">Name</label>
-            <input id="name" type="text" placeholder="Your name" required />
-          </div>
-          <div class="form-row">
-            <label for="email">Email</label>
-            <input id="email" type="email" placeholder="Your email" required />
-          </div>
-          <div class="form-row">
-            <label for="message">Message</label>
-            <textarea id="message" placeholder="Your message" required></textarea>
-          </div>
-          <button type="submit" class="btn-primary">
-            <i class="fa-solid fa-paper-plane"></i> Send Message
-          </button>
-        </form>
-      </div>
     </section>
   </main>
 
