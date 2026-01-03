@@ -841,91 +841,130 @@
 
         /* ---- GET IN TOUCH SECTION ---- */
 
-        #getintouch{
-        margin-top:2rem;
+        #getintouch {
+            margin-top: 2rem;
         }
 
-        .get-grid{
-        display:grid;
-        grid-template-columns:repeat(2,1fr);
-        gap:1.5rem;
-        margin-top:1.5rem;
+        .get-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
         }
 
-        .get-card{
-        position:relative;
-        background:var(--glass-bg);
-        border:1px solid var(--glass-border);
-        border-radius:1.3rem;
-        padding:2.2rem 1.4rem 1.4rem;
-        text-align:center;
-        box-shadow:var(--shadow-light);
-        backdrop-filter:blur(15px);
-        transition:.3s;
-        animation:fadeInUp .6s ease forwards;
-        opacity:0;
+        /* card */
+        .get-card {
+            position: relative;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 1.3rem;
+            padding: 2.2rem 1.4rem 1.4rem;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(15px);
+            transition: .35s;
+            opacity: 0;
+            transform: translateY(25px);
+            animation: getFade .7s ease forwards;
         }
 
-        .get-card:hover{
-        transform:translateY(-6px);
-        border-color:rgba(37,99,235,.4);
+        /* stagger animation */
+        .get-card:nth-child(1) {
+            animation-delay: .1s
+        }
+
+        .get-card:nth-child(2) {
+            animation-delay: .2s
+        }
+
+        .get-card:nth-child(3) {
+            animation-delay: .3s
+        }
+
+        .get-card:nth-child(4) {
+            animation-delay: .4s
+        }
+
+        @keyframes getFade {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .get-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(37, 99, 235, .45);
+            box-shadow: 0 20px 45px rgba(37, 99, 235, .25);
         }
 
         /* circular icon badge */
-        .get-icon{
-        position:absolute;
-        top:-24px;
-        left:50%;
-        transform:translateX(-50%);
-        width:52px;
-        height:52px;
-        border-radius:50%;
-        background:#111827;
-        color:#ff007f;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        font-size:1.2rem;
-        border:2px solid #222;
-        box-shadow:0 8px 20px rgba(0,0,0,.3);
+        .get-icon {
+            position: absolute;
+            top: -24px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            background: var(--bg-secondary);
+            color: var(--primary);
+            border: 2px solid rgba(37, 99, 235, .25);
+            box-shadow: 0 10px 28px rgba(15, 23, 42, .25);
+            animation: iconFloat 3s infinite ease-in-out;
         }
 
-        [data-theme="light"] .get-icon{
-        background:#fff;
-        border-color:#eee;
-        color:var(--primary-dark);
+        @keyframes iconFloat {
+
+            0%,
+            100% {
+                transform: translate(-50%, 0)
+            }
+
+            50% {
+                transform: translate(-50%, -6px)
+            }
         }
 
-        .get-card h4{
-        font-size:.95rem;
-        color:var(--text-secondary);
-        margin-top:.6rem;
+        /* dark mode icon look */
+        [data-theme="dark"] .get-icon {
+            background: #111827;
+            border-color: #1f2937;
         }
 
-        .get-card p{
-        font-weight:600;
-        color:var(--text-primary);
-        margin-top:.3rem;
+        /* headings + text */
+        .get-card h4 {
+            font-size: .95rem;
+            color: var(--text-secondary);
+            margin-top: .6rem;
         }
 
-        /* social icons */
-        .get-card p a{
-        color:var(--text-primary);
-        font-size:1.1rem;
-        transition:.3s;
+        .get-card p {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-top: .3rem;
         }
 
-        .get-card p a:hover{
-        color:var(--primary);
+        /* clickable links */
+        .get-card p a {
+            color: var(--text-primary);
+            transition: .25s;
+        }
+
+        .get-card p a:hover {
+            color: var(--primary);
         }
 
         /* responsive */
-        @media(max-width:768px){
-        .get-grid{
-            grid-template-columns:1fr;
+        @media(max-width:768px) {
+            .get-grid {
+                grid-template-columns: 1fr;
+            }
         }
-        }
-
     </style>
 </head>
 
@@ -1166,7 +1205,7 @@
                         <i class="fa-solid fa-phone"></i>
                     </div>
                     <h4>Phone</h4>
-                    <p>Available on Request</p>
+                    <p><a href="tel:+917385797300">+91 73857 97300</a></p>
                 </div>
 
                 <div class="get-card">
@@ -1174,7 +1213,7 @@
                         <i class="fa-solid fa-envelope"></i>
                     </div>
                     <h4>Email</h4>
-                    <p>krishna.sharma042@gmail.com</p>
+                    <p><a href="mailto:krishna.sharma042@gmail.com">krishna.sharma042@gmail.com</a></p>
                 </div>
 
                 <div class="get-card">
@@ -1182,7 +1221,7 @@
                         <i class="fa-solid fa-location-dot"></i>
                     </div>
                     <h4>Address</h4>
-                    <p>Malegaon, Maharashtra</p>
+                    <p>Pune, Maharashtra</p>
                 </div>
 
                 <div class="get-card">
@@ -1199,7 +1238,7 @@
                             <i class="fab fa-github"></i>
                         </a>
                         &nbsp;
-                        <a href="https://instagram.com" target="_blank">
+                        <a href="https://www.instagram.com/krishna_sharma15/" target="_blank">
                             <i class="fab fa-instagram"></i>
                         </a>
                     </p>
@@ -1207,6 +1246,7 @@
 
             </div>
         </section>
+
 
     </main>
 
