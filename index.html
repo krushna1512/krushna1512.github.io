@@ -5,41 +5,70 @@
   <title>Krushna Sharma - Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <header>
   <nav class="nav">
-    <div class="nav-left">Krushna <span style="font-weight:500;">Sharma</span></div>
+    <div class="nav-left">
+      Krushna <span style="font-weight:500;">Sharma</span>
+    </div>
 
     <div class="nav-right">
-      <a onclick="loadPage('home')" class="active"><i class="fa-solid fa-house"></i> Home</a>
-      <a onclick="loadPage('about')"><i class="fa-solid fa-user"></i> About</a>
-      <a onclick="loadPage('skills')"><i class="fa-solid fa-gears"></i> Skills</a>
-      <a onclick="loadPage('projects')"><i class="fa-solid fa-diagram-project"></i> Projects</a>
-      <a onclick="loadPage('contact')"><i class="fa-solid fa-envelope"></i> Contact</a>
+
+      <a onclick="loadPage('home', this)" class="active">
+        <i class="fa-solid fa-house"></i> Home
+      </a>
+
+      <a onclick="loadPage('about', this)">
+        <i class="fa-solid fa-user"></i> About
+      </a>
+
+      <a onclick="loadPage('skills', this)">
+        <i class="fa-solid fa-gears"></i> Skills
+      </a>
+
+      <a onclick="loadPage('projects', this)">
+        <i class="fa-solid fa-diagram-project"></i> Projects
+      </a>
+
+      <a onclick="loadPage('contact', this)">
+        <i class="fa-solid fa-envelope"></i> Contact
+      </a>
 
       <button class="theme-toggle">
         <i class="fa-solid fa-moon"></i>
       </button>
+
     </div>
   </nav>
 </header>
 
-<main id="content">
-</main>
 
+<!-- MAIN CONTENT -->
+<main id="content"></main>
+
+
+<!-- FOOTER -->
 <footer>
   © 2026 Krushna Sharma. All rights reserved.
 </footer>
 
+
+<!-- LOAD SCRIPT -->
 <script src="script.js"></script>
 
 <script>
-  loadPage("home"); // load default page
+  // Load default page
+  loadPage("home", document.querySelector(".nav-right a"));
 </script>
 
 </body>
