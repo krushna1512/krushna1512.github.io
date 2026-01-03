@@ -5,12 +5,12 @@
   <title>Krushna Sharma - Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Styles -->
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Icons -->
+  <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 </head>
 
 <body>
@@ -18,57 +18,133 @@
 <!-- NAVBAR -->
 <header>
   <nav class="nav">
-    <div class="nav-left">
-      Krushna <span style="font-weight:500;">Sharma</span>
-    </div>
+    <div class="nav-left">Krushna <span style="font-weight:500;">Sharma</span></div>
 
     <div class="nav-right">
-
-      <a onclick="loadPage('home', this)" class="active">
-        <i class="fa-solid fa-house"></i> Home
-      </a>
-
-      <a onclick="loadPage('about', this)">
-        <i class="fa-solid fa-user"></i> About
-      </a>
-
-      <a onclick="loadPage('skills', this)">
-        <i class="fa-solid fa-gears"></i> Skills
-      </a>
-
-      <a onclick="loadPage('projects', this)">
-        <i class="fa-solid fa-diagram-project"></i> Projects
-      </a>
-
-      <a onclick="loadPage('contact', this)">
-        <i class="fa-solid fa-envelope"></i> Contact
-      </a>
+      <a href="#home" class="active"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="#about"><i class="fa-solid fa-user"></i> About</a>
+      <a href="#skills"><i class="fa-solid fa-gears"></i> Skills</a>
+      <a href="#projects"><i class="fa-solid fa-diagram-project"></i> Projects</a>
+      <a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
 
       <button class="theme-toggle">
         <i class="fa-solid fa-moon"></i>
       </button>
-
     </div>
   </nav>
 </header>
 
 
-<!-- MAIN CONTENT -->
-<main id="content"></main>
+<main>
+
+  <!-- ⭐ HOME -->
+  <section id="home" class="hero">
+    <div>
+      <h1>Hi, I'm Krushna Sharma</h1>
+      <h2>Site Reliability Engineer / DevOps (AWS)</h2>
+      <p>Site Reliability Engineer (SRE) and DevOps specialist experienced in AWS, CI/CD automation and cloud reliability.</p>
+    </div>
+
+    <div class="hero-photo">
+      <img src="profile.png" alt="Profile">
+    </div>
+  </section>
 
 
-<!-- FOOTER -->
+  <!-- ⭐ ABOUT -->
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="section-underline"></div>
+
+    <div class="about-text">
+      I am a Site Reliability Engineer and DevOps specialist with hands-on experience managing AWS infrastructure, automation, CI/CD and observability.
+    </div>
+  </section>
+
+
+  <!-- ⭐ SKILLS -->
+  <section id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="section-underline"></div>
+
+    <div class="skills-grid">
+
+      <div class="skill-card"><div class="skill-icon"><i class="fa-brands fa-linux"></i></div>Linux</div>
+      <div class="skill-card"><div class="skill-icon"><i class="fa-brands fa-aws"></i></div>AWS</div>
+      <div class="skill-card"><div class="skill-icon"><i class="fa-brands fa-git-alt"></i></div>Git</div>
+      <div class="skill-card"><div class="skill-icon"><i class="fa-brands fa-github"></i></div>GitHub Actions</div>
+
+      <div class="skill-card"><div class="skill-icon"><i class="fa-brands fa-docker"></i></div>Docker</div>
+      <div class="skill-card"><div class="skill-icon"><i class="fa-solid fa-network-wired"></i></div>Kubernetes</div>
+      <div class="skill-card"><div class="skill-icon"><i class="fa-solid fa-cloud"></i></div>CloudFormation</div>
+      <div class="skill-card"><div class="skill-icon"><i class="fa-solid fa-chart-line"></i></div>Grafana</div>
+
+      <div class="skill-card"><div class="skill-icon"><i class="fa-solid fa-fire"></i></div>Prometheus</div>
+      <div class="skill-card"><div class="skill-icon"><i class="fa-solid fa-book-atlas"></i></div>Loki</div>
+      <div class="skill-card"><div class="skill-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>Blackbox</div>
+      <div class="skill-card"><div class="skill-icon"><i class="fa-solid fa-dog"></i></div>Datadog</div>
+
+      <div class="skill-card"><div class="skill-icon"><i class="fa-solid fa-eye"></i></div>CloudWatch</div>
+      <div class="skill-card"><div class="skill-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>Root Cause Analysis</div>
+
+    </div>
+  </section>
+
+
+  <!-- ⭐ PROJECTS -->
+  <section id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="section-underline"></div>
+
+    <!-- your cards go here -->
+  </section>
+
+
+  <!-- ⭐ CONTACT -->
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <div class="section-underline"></div>
+
+    <p>Email: krishna.sharma042@gmail.com</p>
+    <p>Phone: +91 73857 97300</p>
+  </section>
+
+</main>
+
+
 <footer>
   © 2026 Krushna Sharma. All rights reserved.
 </footer>
 
 
-<!-- LOAD SCRIPT -->
-<script src="script.js"></script>
-
 <script>
-  // Load default page
-  loadPage("home", document.querySelector(".nav-right a"));
+/* Highlight active link */
+document.querySelectorAll('.nav-right a').forEach(a=>{
+  a.addEventListener("click",function(){
+    document.querySelectorAll('.nav-right a').forEach(x=>x.classList.remove("active"));
+    this.classList.add("active");
+  });
+});
+
+/* Dark mode */
+const root=document.documentElement;
+const icon=document.querySelector(".theme-toggle i");
+const saved=localStorage.getItem("theme")||"light";
+root.setAttribute("data-theme",saved);
+setIcon();
+
+document.querySelector(".theme-toggle").onclick=()=>{
+  const next=root.getAttribute("data-theme")==="dark"?"light":"dark";
+  root.setAttribute("data-theme",next);
+  localStorage.setItem("theme",next);
+  setIcon();
+};
+
+function setIcon(){
+ icon.className=root.getAttribute("data-theme")==="dark"
+ ?"fa-solid fa-sun"
+ :"fa-solid fa-moon";
+}
 </script>
 
 </body>
