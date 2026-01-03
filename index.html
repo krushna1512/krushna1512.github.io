@@ -5,22 +5,13 @@
   <title>Krushna Sharma - Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Google Font: Poppins -->
+  <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet"
-  /> <!-- [web:101][web:113] -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 
-  <!-- Font Awesome Icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  /> <!-- [web:37][web:48] -->
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <style>
     :root {
@@ -47,42 +38,21 @@
       --border-subtle: #1f2937;
       --shadow-soft: 0 10px 28px rgba(15, 23, 42, 0.9);
       --shadow-strong: 0 22px 50px rgba(0, 0, 0, 0.9);
-    } /* [web:87][web:90] */
+    }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: "Poppins", system-ui;
     }
 
     body {
       background: var(--bg);
       color: var(--text-main);
-      transition: background 0.3s ease, color 0.3s ease;
     }
 
     a { text-decoration: none; color: inherit; }
-
-    :root { scroll-behavior: smooth; }
-
-    .fade-up {
-      opacity: 0;
-      transform: translateY(18px);
-      animation: fadeUp 0.7s ease forwards;
-    }
-    .fade-up.delay-1 { animation-delay: 0.15s; }
-    .fade-up.delay-2 { animation-delay: 0.3s; }
-    .fade-up.delay-3 { animation-delay: 0.45s; }
-
-    @keyframes fadeUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes floatY {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
 
     header {
       position: sticky;
@@ -90,177 +60,43 @@
       z-index: 100;
       background: rgba(15, 23, 42, 0.02);
       backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+      border-bottom: 1px solid rgba(148,163,184,.35);
     }
 
     .nav {
       max-width: 1100px;
-      margin: 0 auto;
-      padding: 0.8rem 1.5rem;
+      margin: auto;
+      padding: .8rem 1.5rem;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .nav-left {
-      font-weight: 700;
-      font-size: 1.15rem;
-    }
-
-    .nav-right {
-      display: flex;
       align-items: center;
-      gap: 1rem;
-    }
-
-    .nav-links a {
-      margin-left: 1.2rem;
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      position: relative;
-      padding-bottom: 0.2rem;
-      transition: color 0.25s ease;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      height: 2px;
-      width: 0;
-      background: var(--primary);
-      transition: width 0.25s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--primary);
-    }
-
-    .nav-links a:hover::after,
-    .nav-links a.active::after {
-      width: 100%;
     }
 
     .theme-toggle {
-      border-radius: 999px;
-      border: 1px solid var(--border-subtle);
+      border-radius: 50%;
       width: 38px;
       height: 38px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(15, 23, 42, 0.03);
-      color: var(--primary);
+      border: 1px solid var(--border-subtle);
+      background: rgba(15,23,42,.03);
       cursor: pointer;
-      transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease;
-    } /* [web:92] */
-
-    .theme-toggle:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.25);
-      background: rgba(15, 23, 42, 0.06);
     }
-
-    .theme-toggle i { font-size: 1.05rem; }
 
     main {
       max-width: 1100px;
-      margin: 0 auto;
+      margin: auto;
       padding: 2.5rem 1.5rem 3rem;
     }
-
-    section { margin-bottom: 3rem; }
-
-    .btn-primary,
-    .btn-outline,
-    .btn-icon {
-      padding: 0.7rem 1.4rem;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      cursor: pointer;
-      border: 1px solid transparent;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      justify-content: center;
-      background: none;
-      position: relative;
-      overflow: hidden;
-      transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease, border-color 0.25s ease;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: #ffffff;
-      border-color: var(--primary);
-      box-shadow: 0 12px 24px rgba(37, 99, 235, 0.32);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--text-main);
-      border-color: var(--border-subtle);
-    }
-
-    .btn-primary::after,
-    .btn-outline::after,
-    .btn-icon::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(120deg, rgba(255, 255, 255, 0.32), transparent);
-      transform: translateX(-100%);
-      transition: transform 0.35s ease;
-    }
-
-    .btn-primary:hover,
-    .btn-outline:hover,
-    .btn-icon:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.25);
-    }
-
-    .btn-primary:hover {
-      background: var(--primary-dark);
-      border-color: var(--primary-dark);
-    }
-
-    .btn-outline:hover {
-      background: rgba(148, 163, 184, 0.06);
-    }
-
-    .btn-primary:hover::after,
-    .btn-outline:hover::after,
-    .btn-icon:hover::after {
-      transform: translateX(0);
-    }
-
-    .btn-icon {
-      width: 40px;
-      height: 40px;
-      padding: 0;
-      border-color: var(--border-subtle);
-      background: rgba(148, 163, 184, 0.08);
-      color: var(--text-main);
-    }
-
-    .btn-icon i { font-size: 1.1rem; }
 
     .hero {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
       gap: 2rem;
+      align-items: center;
       background: var(--bg-hero);
       border-radius: 1.5rem;
       padding: 2.5rem 2rem;
-      overflow: hidden;
       position: relative;
-      transition: background 0.3s ease;
+      overflow: hidden;
     }
 
     .hero::before {
@@ -268,542 +104,88 @@
       position: absolute;
       width: 320px;
       height: 320px;
-      border-radius: 999px;
-      background: rgba(191, 219, 254, 0.4);
+      border-radius: 50%;
       right: -80px;
       top: -60px;
-      filter: blur(3px);
-      z-index: 0;
+      background: rgba(191,219,254,.4);
     }
 
     html[data-theme="dark"] .hero::before {
-      background: rgba(15, 23, 42, 0.8);
+      background: rgba(15,23,42,.8);
     }
 
-    .hero-text {
-      flex: 1 1 260px;
-      position: relative;
-      z-index: 1;
-    }
+    .hero-text { flex: 1 1 260px; }
 
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: #ecfeff;
-      color: #0f766e;
-      padding: 0.3rem 0.8rem;
-      border-radius: 999px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      margin-bottom: 0.7rem;
-    }
-
-    html[data-theme="dark"] .hero-badge {
-      background: rgba(34, 197, 235, 0.06);
-      color: #22d3ee;
-    }
-
-    .hero-badge i { font-size: 0.9rem; }
-
-    .hero-text h1 {
-      font-size: 2.1rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .hero-text h2 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--primary);
-      margin-bottom: 0.85rem;
-    }
-
-    .hero-text p {
-      font-size: 0.96rem;
-      line-height: 1.6;
-      color: var(--text-muted);
-      max-width: 480px;
-      margin-bottom: 1.2rem;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-
-    .hero-photo {
+    .hero-photo{
       flex: 0 0 260px;
       display: flex;
       justify-content: center;
-      align-items: center;
       position: relative;
-      z-index: 1;
-      animation: floatY 5s ease-in-out infinite;
+      z-index: 4;   /* FIX 1 */
     }
 
-    .hero-photo img {
+    .hero-photo img{
       width: 260px;
       height: 260px;
       object-fit: cover;
-      border-radius: 999px;
-      border: 0;
+      border-radius: 50%;
       box-shadow: var(--shadow-strong);
-      background: #e5e7eb;
-      transition: box-shadow 0.3s ease;
-    }
-
-    .section-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-bottom: 0.9rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .section-title i {
-      color: var(--primary);
-      font-size: 1.1rem;
-    }
-
-    .section-underline {
-      width: 32px;
-      height: 3px;
-      border-radius: 999px;
-      background: var(--primary);
-      margin-bottom: 1rem;
-    }
-
-    .about-text {
-      background: var(--bg-card);
-      border-radius: 1.25rem;
-      padding: 1.5rem 1.6rem;
-      box-shadow: var(--shadow-soft);
-      font-size: 0.95rem;
-      line-height: 1.7;
-      color: var(--text-muted);
-      border: 1px solid rgba(15, 23, 42, 0.04);
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.25rem;
-      margin-top: 1.25rem;
-    }
-
-    .card {
-      background: var(--bg-card);
-      border-radius: 1.1rem;
-      padding: 1.4rem 1.2rem;
-      box-shadow: var(--shadow-soft);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      font-size: 0.92rem;
       position: relative;
-      overflow: hidden;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease, background 0.25s ease;
-      border: 1px solid transparent;
-    } /* [web:32] */
-
-    .card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top left, rgba(191, 219, 254, 0.25), transparent);
-      opacity: 0;
-      transition: opacity 0.25s ease;
-      pointer-events: none;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.4);
-      border-color: rgba(37, 99, 235, 0.4);
-      background: rgba(15, 23, 42, 0.02);
-    }
-
-    .card:hover::after { opacity: 1; }
-
-    .card-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 999px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(239, 246, 255, 0.9);
-      color: #1d4ed8;
-      font-size: 1.3rem;
-      margin-bottom: 0.9rem;
-    }
-
-    html[data-theme="dark"] .card-icon {
-      background: rgba(15, 23, 42, 0.9);
-      color: var(--primary);
-    }
-
-    .card h3 {
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .card p {
-      color: var(--text-muted);
-      line-height: 1.5;
-      margin-bottom: 1rem;
-    }
-
-    .card a {
-      font-size: 0.9rem;
-      color: var(--primary);
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      transition: transform 0.2s ease;
-    }
-
-    .card a i { font-size: 0.8rem; }
-
-    .card a:hover { transform: translateX(2px); }
-
-    .contact-wrap {
-      display: grid;
-      grid-template-columns: 1.1fr 1.2fr;
-      gap: 1.5rem;
-      margin-top: 1.2rem;
-    }
-
-    .contact-info {
-      font-size: 0.94rem;
-      color: var(--text-muted);
-    }
-
-    .contact-info p { margin-bottom: 0.5rem; }
-
-    .contact-details { margin-top: 0.75rem; }
-
-    .contact-row {
-      margin-bottom: 0.6rem;
-      display: flex;
-      align-items: center;
-      gap: 0.45rem;
-    }
-
-    .contact-row i {
-      color: var(--primary);
-      width: 18px;
-      text-align: center;
-    }
-
-    .contact-details span.label {
-      font-weight: 600;
-      color: var(--text-main);
-      margin-right: 0.2rem;
-    }
-
-    .contact-form {
-      background: var(--bg-card);
-      border-radius: 1.25rem;
-      padding: 1.5rem 1.6rem;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(15, 23, 42, 0.04);
-    }
-
-    .form-row {
-      margin-bottom: 0.9rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.3rem;
-    }
-
-    .form-row label {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text-main);
-    }
-
-    .form-row input,
-    .form-row textarea {
-      padding: 0.6rem 0.8rem;
-      border-radius: 0.6rem;
-      border: 1px solid var(--border-subtle);
-      font-size: 0.9rem;
-      outline: none;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease, background 0.25s ease, color 0.25s ease;
-      background: transparent;
-      color: var(--text-main);
-    }
-
-    .form-row input:focus,
-    .form-row textarea:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.3);
-      transform: translateY(-1px);
-    }
-
-    .form-row textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    .contact-form button { margin-top: 0.3rem; }
-
-    footer {
-      text-align: center;
-      padding: 1.5rem 0;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    @media (max-width: 900px) {
-      .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .contact-wrap { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 640px) {
-      .nav-links { display: none; }
-      .hero { padding: 2rem 1.4rem; }
-      .hero-photo img { width: 210px; height: 210px; }
-      .cards { grid-template-columns: 1fr; }
+      z-index: 5;   /* FIX 2 */
+      background:#fff;
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <nav class="nav">
-      <div class="nav-left">Krushna <span style="font-weight:500;">Sharma</span></div>
 
-      <div class="nav-right">
-        <div class="nav-links">
-          <a href="#home" class="active">Home</a>
-          <a href="#about">About Me</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-        </div>
+<header>
+  <nav class="nav">
+    <div>Krushna <b>Sharma</b></div>
+    <button id="themeToggle" class="theme-toggle">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+  </nav>
+</header>
 
-        <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
-          <i class="fa-solid fa-moon"></i>
-        </button>
-      </div>
-    </nav>
-  </header>
+<main>
 
-  <main>
-    <!-- Hero -->
-    <section id="home" class="hero fade-up">
-      <div class="hero-text">
-        <div class="hero-badge">
-          <i class="fa-solid fa-cloud-arrow-up"></i>
-          DevOps · SRE · AWS
-        </div>
-        <h1>Hi, I'm Krushna Sharma</h1>
-        <h2>Site Reliability Engineer / DevOps (AWS)</h2>
-        <p>
-          Site Reliability Engineer (SRE) and DevOps specialist with experience in managing AWS cloud infrastructure, automating CI/CD pipelines, and improving system reliability.
-        </p>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Hi, I'm Krushna Sharma</h1>
+      <h2>Site Reliability Engineer / DevOps (AWS)</h2>
+      <p>Site Reliability Engineer (SRE) and DevOps specialist with experience in AWS, CI/CD, monitoring & automation.</p>
+    </div>
 
-        <!-- Download resume AFTER intro -->
-        <div class="hero-buttons" style="margin-bottom: 1.1rem;">
-          <a href="resume.pdf" class="btn-primary" download>
-            <i class="fa-solid fa-file-arrow-down"></i>
-            Download Resume
-          </a>
-        </div>
+    <div class="hero-photo">
+      <img src="/profile.png" alt="Profile photo">
+    </div>
+  </section>
 
-        <!-- Main hero buttons + social icons -->
-        <div class="hero-buttons">
-          <a href="#projects" class="btn-outline">
-            <i class="fa-solid fa-diagram-project"></i>
-            View My Projects
-          </a>
-          <a href="#contact" class="btn-outline">
-            <i class="fa-solid fa-envelope"></i>
-            Contact Me
-          </a>
-          <a
-            href="https://www.linkedin.com/in/krushna-sharma-774633140/"
-            class="btn-icon"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Visit my LinkedIn profile"
-          >
-            <i class="fa-brands fa-linkedin-in"></i>
-          </a>
-          <a
-            href="https://github.com/krushna1512"
-            class="btn-icon"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Visit my GitHub profile"
-          >
-            <i class="fa-brands fa-github"></i>
-          </a>
-        </div>
-      </div>
+</main>
 
-      <div class="hero-photo fade-up delay-1">
-        <!-- IMPORTANT: profile.png must be in the SAME folder as this HTML file -->
-        <img src="/profile.png" alt="Profile photo" style="width:260px;height:260px;border-radius:999px;">
-      </div>
-    </section>
+<script>
+const themeToggle = document.getElementById("themeToggle");
+const root = document.documentElement;
 
-    <!-- About -->
-    <section id="about" class="fade-up delay-1">
-      <h2 class="section-title">
-        <i class="fa-solid fa-user-gear"></i>
-        About Me
-      </h2>
-      <div class="section-underline"></div>
-      <div class="about-text">
-        I'm a Site Reliability Engineer and DevOps specialist with extensive experience managing AWS cloud infrastructure, automating CI/CD pipelines, and implementing robust monitoring and security practices. 
-        I work with services such as EC2, ECS, S3, Lambda, and CloudWatch along with Docker, Kubernetes, and IaC using Terraform and CloudFormation.
-      </div>
-    </section>
+const storedTheme = localStorage.getItem("theme");
+if (storedTheme) root.setAttribute("data-theme", storedTheme);
 
-    <!-- Projects -->
-    <section id="projects" class="fade-up delay-2">
-      <h2 class="section-title">
-        <i class="fa-solid fa-laptop-code"></i>
-        Recent Projects
-      </h2>
-      <div class="section-underline"></div>
+function updateIcon(){
+  themeToggle.innerHTML =
+    root.getAttribute("data-theme")==="dark"
+    ? '<i class="fa-solid fa-sun"></i>'
+    : '<i class="fa-solid fa-moon"></i>';
+}
+updateIcon();
 
-      <div class="cards">
-        <article class="card">
-          <div>
-            <div class="card-icon">
-              <i class="fa-solid fa-piggy-bank"></i>
-            </div>
-            <h3>AWS Cost Optimization</h3>
-            <p>
-              Implemented AWS cost-optimization strategies, reducing monthly cloud spend by up to 20% while improving resource utilization and reliability.
-            </p>
-          </div>
-          <a href="#">
-            View Details
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
-        </article>
+themeToggle.onclick = () => {
+  const next = root.getAttribute("data-theme")==="dark" ? "light" : "dark";
+  root.setAttribute("data-theme", next);
+  localStorage.setItem("theme", next);
+  updateIcon();
+};
+</script>
 
-        <article class="card">
-          <div>
-            <div class="card-icon">
-              <i class="fa-solid fa-gear"></i>
-            </div>
-            <h3>GitHub Actions CI/CD Pipelines</h3>
-            <p>
-              Designed and deployed CI/CD pipelines using GitHub Actions to automate build, test, and deployment workflows for microservices.
-            </p>
-          </div>
-          <a href="#">
-            View Details
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
-        </article>
-
-        <article class="card">
-          <div>
-            <div class="card-icon">
-              <i class="fa-solid fa-chart-line"></i>
-            </div>
-            <h3>Centralized Monitoring Dashboards</h3>
-            <p>
-              Built real-time monitoring dashboards with Grafana and Prometheus to deliver production insights and improve observability.
-            </p>
-          </div>
-          <a href="#">
-            View Details
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
-        </article>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="fade-up delay-3">
-      <h2 class="section-title">
-        <i class="fa-solid fa-paper-plane"></i>
-        Contact
-      </h2>
-      <div class="section-underline"></div>
-
-      <div class="contact-wrap">
-        <div class="contact-info">
-          <p>Feel free to reach out to me for opportunities, collaborations, or just to say hello.</p>
-
-          <div class="contact-details">
-            <div class="contact-row">
-              <i class="fa-solid fa-phone"></i>
-              <div><span class="label">Phone:</span>+91 73857 97300</div>
-            </div>
-            <div class="contact-row">
-              <i class="fa-solid fa-envelope"></i>
-              <div><span class="label">Email:</span>krishna.sharma042@gmail.com</div>
-            </div>
-            <div class="contact-row">
-              <i class="fa-solid fa-location-dot"></i>
-              <div><span class="label">Location:</span>Malegaon, Maharashtra</div>
-            </div>
-          </div>
-        </div>
-
-        <form class="contact-form">
-          <div class="form-row">
-            <label for="name">Name</label>
-            <input id="name" type="text" placeholder="Your name" />
-          </div>
-          <div class="form-row">
-            <label for="email">Email</label>
-            <input id="email" type="email" placeholder="Your email" />
-          </div>
-          <div class="form-row">
-            <label for="message">Message</label>
-            <textarea id="message" placeholder="Your message"></textarea>
-          </div>
-          <button type="submit" class="btn-primary">
-            <i class="fa-solid fa-paper-plane"></i>
-            Send Message
-          </button>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    © 2026 Krushna Sharma. All rights reserved.
-  </footer>
-
-  <!-- Dark mode toggle -->
-  <script>
-    const themeToggle = document.getElementById("themeToggle");
-    const root = document.documentElement;
-
-    const storedTheme = localStorage.getItem("theme");
-    if (storedTheme === "dark" || storedTheme === "light") {
-      root.setAttribute("data-theme", storedTheme);
-    }
-
-    function updateToggleIcon() {
-      const currentTheme = root.getAttribute("data-theme");
-      themeToggle.innerHTML =
-        currentTheme === "dark"
-          ? '<i class="fa-solid fa-sun"></i>'
-          : '<i class="fa-solid fa-moon"></i>';
-    }
-
-    updateToggleIcon();
-
-    themeToggle.addEventListener("click", () => {
-      const current = root.getAttribute("data-theme");
-      const next = current === "dark" ? "light" : "dark";
-      root.setAttribute("data-theme", next);
-      localStorage.setItem("theme", next);
-      updateToggleIcon();
-    });
-  </script> <!-- [web:83][web:96] -->
 </body>
 </html>
