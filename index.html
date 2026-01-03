@@ -28,7 +28,6 @@
       --shadow-strong: 0 22px 40px rgba(15, 23, 42, 0.35);
     }
 
-    /* Dark theme overrides */
     html[data-theme="dark"] {
       --primary: #60a5fa;
       --primary-dark: #3b82f6;
@@ -40,7 +39,7 @@
       --border-subtle: #1f2937;
       --shadow-soft: 0 10px 28px rgba(15, 23, 42, 0.9);
       --shadow-strong: 0 22px 50px rgba(0, 0, 0, 0.9);
-    } /* [web:87][web:90] */
+    } [web:87][web:90]
 
     * {
       margin: 0;
@@ -60,26 +59,19 @@
       color: inherit;
     }
 
-    :root {
-      scroll-behavior: smooth;
-    }
+    :root { scroll-behavior: smooth; }
 
-    /* Animations */
     .fade-up {
       opacity: 0;
       transform: translateY(18px);
       animation: fadeUp 0.7s ease forwards;
     }
-
     .fade-up.delay-1 { animation-delay: 0.15s; }
     .fade-up.delay-2 { animation-delay: 0.3s; }
     .fade-up.delay-3 { animation-delay: 0.45s; }
 
     @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes floatY {
@@ -87,7 +79,6 @@
       50% { transform: translateY(-10px); }
     }
 
-    /* Navbar */
     header {
       position: sticky;
       top: 0;
@@ -147,7 +138,6 @@
       width: 100%;
     }
 
-    /* Dark mode toggle */
     .theme-toggle {
       border-radius: 999px;
       border: 1px solid var(--border-subtle);
@@ -160,7 +150,7 @@
       color: var(--primary);
       cursor: pointer;
       transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease;
-    } /* [web:92][web:95] */
+    } [web:92]
 
     .theme-toggle:hover {
       transform: translateY(-1px);
@@ -168,22 +158,16 @@
       background: rgba(15, 23, 42, 0.06);
     }
 
-    .theme-toggle i {
-      font-size: 1.05rem;
-    }
+    .theme-toggle i { font-size: 1.05rem; }
 
-    /* Layout containers */
     main {
       max-width: 1100px;
       margin: 0 auto;
       padding: 2.5rem 1.5rem 3rem;
     }
 
-    section {
-      margin-bottom: 3rem;
-    }
+    section { margin-bottom: 3rem; }
 
-    /* Buttons */
     .btn-primary,
     .btn-outline,
     .btn-icon {
@@ -258,11 +242,8 @@
       color: var(--text-main);
     }
 
-    .btn-icon i {
-      font-size: 1.1rem;
-    }
+    .btn-icon i { font-size: 1.1rem; }
 
-    /* Hero section */
     .hero {
       display: flex;
       flex-wrap: wrap;
@@ -318,9 +299,7 @@
       color: #22d3ee;
     }
 
-    .hero-badge i {
-      font-size: 0.9rem;
-    }
+    .hero-badge i { font-size: 0.9rem; }
 
     .hero-text h1 {
       font-size: 2.1rem;
@@ -348,7 +327,6 @@
       gap: 0.75rem;
     }
 
-    /* Profile image (no frame) */
     .hero-photo {
       flex: 0 0 260px;
       display: flex;
@@ -370,7 +348,6 @@
       transition: box-shadow 0.3s ease;
     }
 
-    /* Sections */
     .section-title {
       font-size: 1.25rem;
       font-weight: 700;
@@ -404,7 +381,6 @@
       border: 1px solid rgba(15, 23, 42, 0.04);
     }
 
-    /* Projects cards */
     .cards {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -425,7 +401,7 @@
       overflow: hidden;
       transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease, background 0.25s ease;
       border: 1px solid transparent;
-    } /* [web:32][web:35] */
+    } [web:32]
 
     .card::after {
       content: "";
@@ -444,9 +420,7 @@
       background: rgba(15, 23, 42, 0.02);
     }
 
-    .card:hover::after {
-      opacity: 1;
-    }
+    .card:hover::after { opacity: 1; }
 
     .card-icon {
       width: 44px;
@@ -487,15 +461,10 @@
       transition: transform 0.2s ease;
     }
 
-    .card a i {
-      font-size: 0.8rem;
-    }
+    .card a i { font-size: 0.8rem; }
 
-    .card a:hover {
-      transform: translateX(2px);
-    }
+    .card a:hover { transform: translateX(2px); }
 
-    /* Contact */
     .contact-wrap {
       display: grid;
       grid-template-columns: 1.1fr 1.2fr;
@@ -508,13 +477,9 @@
       color: var(--text-muted);
     }
 
-    .contact-info p {
-      margin-bottom: 0.5rem;
-    }
+    .contact-info p { margin-bottom: 0.5rem; }
 
-    .contact-details {
-      margin-top: 0.75rem;
-    }
+    .contact-details { margin-top: 0.75rem; }
 
     .contact-row {
       margin-bottom: 0.6rem;
@@ -580,9 +545,7 @@
       min-height: 120px;
     }
 
-    .contact-form button {
-      margin-top: 0.3rem;
-    }
+    .contact-form button { margin-top: 0.3rem; }
 
     footer {
       text-align: center;
@@ -591,39 +554,20 @@
       color: var(--text-muted);
     }
 
-    /* Responsive */
     @media (max-width: 900px) {
-      .cards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .contact-wrap {
-        grid-template-columns: 1fr;
-      }
+      .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .contact-wrap { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 640px) {
-      .nav-links {
-        display: none;
-      }
-
-      .hero {
-        padding: 2rem 1.4rem;
-      }
-
-      .hero-photo img {
-        width: 210px;
-        height: 210px;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
+      .nav-links { display: none; }
+      .hero { padding: 2rem 1.4rem; }
+      .hero-photo img { width: 210px; height: 210px; }
+      .cards { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <!-- Navbar -->
   <header>
     <nav class="nav">
       <div class="nav-left">Krushna <span style="font-weight:500;">Sharma</span></div>
@@ -636,7 +580,6 @@
           <a href="#contact">Contact</a>
         </div>
 
-        <!-- Dark mode toggle -->
         <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
           <i class="fa-solid fa-moon"></i>
         </button>
@@ -648,14 +591,6 @@
     <!-- Hero -->
     <section id="home" class="hero fade-up">
       <div class="hero-text">
-        <!-- Resume download button on top -->
-        <div class="hero-buttons" style="margin-bottom: 1.1rem;">
-          <a href="resume.pdf" class="btn-primary" download>
-            <i class="fa-solid fa-file-arrow-down"></i>
-            Download Resume
-          </a>
-        </div>
-
         <div class="hero-badge">
           <i class="fa-solid fa-cloud-arrow-up"></i>
           DevOps · SRE · AWS
@@ -666,7 +601,15 @@
           Site Reliability Engineer (SRE) and DevOps specialist with experience in managing AWS cloud infrastructure, automating CI/CD pipelines, and improving system reliability.
         </p>
 
-        <!-- Main hero buttons -->
+        <!-- Download resume AFTER intro -->
+        <div class="hero-buttons" style="margin-bottom: 1.1rem;">
+          <a href="resume.pdf" class="btn-primary" download>
+            <i class="fa-solid fa-file-arrow-down"></i>
+            Download Resume
+          </a>
+        </div>
+
+        <!-- Main hero buttons + social icons -->
         <div class="hero-buttons">
           <a href="#projects" class="btn-outline">
             <i class="fa-solid fa-diagram-project"></i>
@@ -676,8 +619,6 @@
             <i class="fa-solid fa-envelope"></i>
             Contact Me
           </a>
-
-          <!-- Social icon-only buttons -->
           <a
             href="https://www.linkedin.com/in/krushna-sharma-774633140/"
             class="btn-icon"
@@ -700,8 +641,8 @@
       </div>
 
       <div class="hero-photo fade-up delay-1">
-        <!-- Your profile image -->
-        <img src="profile.png" alt="Profile photo" />
+        <!-- Ensure profile.png is in the SAME folder as this HTML -->
+        <img src="./profile.png" alt="Profile photo" />
       </div>
     </section>
 
@@ -802,35 +743,7 @@
               <i class="fa-solid fa-location-dot"></i>
               <div><span class="label">Location:</span>Malegaon, Maharashtra</div>
             </div>
-            <!-- Icon-only social links (no URL text) -->
-            <div class="contact-row">
-              <i class="fa-brands fa-linkedin"></i>
-              <div>
-                <span class="label">LinkedIn:</span>
-                <a
-                  href="https://www.linkedin.com/in/krushna-sharma-774633140/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Visit my LinkedIn profile"
-                >
-                  <i class="fa-brands fa-linkedin-in"></i>
-                </a>
-              </div>
-            </div>
-            <div class="contact-row">
-              <i class="fa-brands fa-github"></i>
-              <div>
-                <span class="label">GitHub:</span>
-                <a
-                  href="https://github.com/krushna1512"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Visit my GitHub profile"
-                >
-                  <i class="fa-brands fa-github"></i>
-                </a>
-              </div>
-            </div>
+            <!-- GitHub/LinkedIn details removed here as requested -->
           </div>
         </div>
 
@@ -860,7 +773,6 @@
     © 2026 Krushna Sharma. All rights reserved.
   </footer>
 
-  <!-- Dark mode toggle script -->
   <script>
     const themeToggle = document.getElementById("themeToggle");
     const root = document.documentElement;
@@ -887,6 +799,6 @@
       localStorage.setItem("theme", next);
       updateToggleIcon();
     });
-  </script> <!-- [web:83][web:87][web:96] -->
+  </script> <!-- [web:83][web:96] -->
 </body>
 </html>
