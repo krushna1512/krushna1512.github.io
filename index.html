@@ -1,303 +1,477 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Krushna Sharma | SRE & DevOps (AWS)</title>
+  <meta charset="UTF-8" />
+  <title>Krushna Sharma - Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    body {
+      background: #f5f7fb;
+      color: #1f2933;
+    }
 
-<style>
-*{box-sizing:border-box;}
-body{
-  margin:0;
-  font-family:'Inter',sans-serif;
-  background:#f3f6fb;
-  color:#0f172a;
-}
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-header{
-  background:#fff;
-  border-bottom:1px solid #e5e7ef;
-  position:sticky;
-  top:0;
-  z-index:10;
-}
-.container{
-  max-width:1150px;
-  margin:auto;
-  padding:0 18px;
-}
-nav{
-  height:72px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-.logo{
-  font-size:20px;
-  font-weight:800;
-}
-nav a{
-  margin-left:18px;
-  text-decoration:none;
-  color:#0f172a;
-}
-nav a:hover{
-  color:#3b5bff;
-}
+    /* Navbar */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #ffffff;
+      box-shadow: 0 1px 8px rgba(15, 23, 42, 0.06);
+    }
 
-.hero{
-  background:linear-gradient(140deg,#f7f9ff,#e7edff);
-  padding:60px 0;
-}
-.hero-grid{
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  align-items:center;
-}
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-.subtitle{
-  color:#3b5bff;
-  font-weight:700;
-}
-h1{
-  font-size:42px;
-  margin:10px 0 10px;
-}
-.hero p{
-  max-width:600px;
-  line-height:1.7;
-  color:#334155;
-}
+    .nav-left {
+      font-weight: 700;
+      font-size: 1.15rem;
+    }
 
-.actions{
-  margin-top:20px;
-}
-.btn{
-  padding:12px 18px;
-  border-radius:10px;
-  font-weight:600;
-  border:none;
-  text-decoration:none;
-  margin-right:10px;
-  cursor:pointer;
-}
-.primary{
-  background:#2a4bff;
-  color:#fff;
-}
-.outline{
-  background:#fff;
-  border:1px solid #d4dbff;
-}
+    .nav-right a {
+      margin-left: 1.5rem;
+      font-size: 0.95rem;
+      color: #4b5563;
+    }
 
-.photo-box{
-  display:flex;
-  justify-content:center;
-}
-.photo{
-  width:260px;
-  height:260px;
-  border-radius:50%;
-  object-fit:cover;
-  border:8px solid #fff;
-  box-shadow:0 20px 45px rgba(0,0,0,.15);
-}
+    .nav-right a.active {
+      color: #2563eb;
+      font-weight: 600;
+      border-bottom: 2px solid #2563eb;
+      padding-bottom: 0.25rem;
+    }
 
-/* SECTION */
-section{
-  padding:45px 0;
-}
+    /* Layout containers */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 3rem;
+    }
 
-.card{
-  background:#fff;
-  border-radius:18px;
-  box-shadow:0 20px 40px rgba(0,0,0,.08);
-  padding:22px;
-}
+    section {
+      margin-bottom: 3rem;
+    }
 
-.projects{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px;
-}
+    /* Hero section */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      background: radial-gradient(circle at top left, #e0edff, #f5f7fb);
+      border-radius: 1.5rem;
+      padding: 2.5rem 2rem;
+    }
 
-.project-icon{
-  font-size:40px;
-  margin-bottom:10px;
-}
+    .hero-text {
+      flex: 1 1 260px;
+    }
 
-.section-title{
-  font-size:22px;
-  margin-bottom:12px;
-}
-.divider-title{
-  border-bottom:3px solid #dbe3ff;
-  width:160px;
-  padding-bottom:4px;
-}
+    .hero-text h1 {
+      font-size: 2.1rem;
+      margin-bottom: 0.75rem;
+    }
 
-.contact-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
-}
+    .hero-text h2 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #2563eb;
+      margin-bottom: 0.75rem;
+    }
 
-input,textarea{
-  width:100%;
-  padding:10px;
-  border-radius:10px;
-  border:1px solid #d3d3d3;
-}
-button{
-  padding:10px 18px;
-  border-radius:10px;
-  border:none;
-  background:#2a4bff;
-  color:#fff;
-  font-weight:700;
-}
+    .hero-text p {
+      font-size: 0.96rem;
+      line-height: 1.6;
+      color: #4b5563;
+      max-width: 480px;
+      margin-bottom: 1.5rem;
+    }
 
-footer{
-  text-align:center;
-  color:#6b7280;
-  padding:25px 0;
-}
-</style>
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .btn-primary,
+    .btn-outline {
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+    }
+
+    .btn-primary {
+      background: #1d4ed8;
+      color: #ffffff;
+      border-color: #1d4ed8;
+    }
+
+    .btn-outline {
+      background: #ffffff;
+      color: #1f2933;
+      border-color: #d1d5db;
+    }
+
+    .btn-primary:hover {
+      background: #1e40af;
+      border-color: #1e40af;
+    }
+
+    .btn-outline:hover {
+      background: #f3f4f6;
+    }
+
+    .hero-photo {
+      flex: 0 0 260px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-photo img {
+      width: 260px;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 1.5rem;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.25);
+      background: #e5e7eb;
+    }
+
+    /* About section */
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.9rem;
+    }
+
+    .section-underline {
+      width: 32px;
+      height: 3px;
+      border-radius: 999px;
+      background: #2563eb;
+      margin-bottom: 1rem;
+    }
+
+    .about-text {
+      background: #ffffff;
+      border-radius: 1.25rem;
+      padding: 1.5rem 1.6rem;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.04);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #4b5563;
+    }
+
+    /* Projects section */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 1.1rem;
+      padding: 1.4rem 1.2rem;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 0.92rem;
+    }
+
+    .card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #eff6ff;
+      color: #1d4ed8;
+      font-size: 1.3rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      color: #4b5563;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+
+    .card a {
+      font-size: 0.9rem;
+      color: #2563eb;
+      font-weight: 600;
+    }
+
+    /* Contact section */
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1.1fr 1.2fr;
+      gap: 1.5rem;
+      margin-top: 1.2rem;
+    }
+
+    .contact-info {
+      font-size: 0.94rem;
+      color: #4b5563;
+    }
+
+    .contact-info p {
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-details {
+      margin-top: 0.75rem;
+    }
+
+    .contact-details div {
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-details span.label {
+      font-weight: 600;
+      color: #111827;
+      margin-right: 0.4rem;
+    }
+
+    .contact-form {
+      background: #ffffff;
+      border-radius: 1.25rem;
+      padding: 1.5rem 1.6rem;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+    }
+
+    .form-row {
+      margin-bottom: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .form-row label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #374151;
+    }
+
+    .form-row input,
+    .form-row textarea {
+      padding: 0.6rem 0.8rem;
+      border-radius: 0.6rem;
+      border: 1px solid #d1d5db;
+      font-size: 0.9rem;
+      outline: none;
+    }
+
+    .form-row input:focus,
+    .form-row textarea:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.2);
+    }
+
+    .form-row textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .contact-form button {
+      margin-top: 0.3rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem 0;
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-right {
+        display: none;
+      }
+
+      .hero {
+        padding: 2rem 1.4rem;
+      }
+
+      .hero-photo img {
+        width: 210px;
+        height: 210px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <!-- Navbar -->
+  <header>
+    <nav class="nav">
+      <div class="nav-left">Krushna <span style="font-weight:500;">Sharma</span></div>
+      <div class="nav-right">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
 
-<header>
- <div class="container">
-  <nav>
-   <div class="logo">Krushna Sharma</div>
+  <main>
+    <!-- Hero -->
+    <section id="home" class="hero">
+      <div class="hero-text">
+        <h1>Hi, I'm Krushna Sharma</h1>
+        <h2>Site Reliability Engineer / DevOps (AWS)</h2>
+        <p>
+          Site Reliability Engineer (SRE) and DevOps specialist with experience in managing AWS cloud infrastructure, automating CI/CD pipelines, and improving system reliability.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn-primary">View My Projects</a>
+          <a href="#contact" class="btn-outline">Contact Me</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <!-- Your profile image -->
+        <img src="profile.png" alt="Profile photo" />
+      </div>
+    </section>
 
-   <div>
-    <a href="#">Home</a>
-    <a href="#about">About Me</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-    <a href="https://github.com/krushna1512" target="_blank"><i class="fab fa-github"></i></a>
-   </div>
-  </nav>
- </div>
-</header>
+    <!-- About -->
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <div class="section-underline"></div>
+      <div class="about-text">
+        I'm a Site Reliability Engineer and DevOps specialist with extensive experience managing AWS cloud infrastructure, automating CI/CD pipelines, and implementing robust monitoring and security practices. 
+        I work with services such as EC2, ECS, S3, Lambda, and CloudWatch along with Docker, Kubernetes, and IaC using Terraform and CloudFormation.
+      </div>
+    </section>
 
-<section class="hero">
- <div class="container hero-grid">
+    <!-- Projects -->
+    <section id="projects">
+      <h2 class="section-title">Recent Projects</h2>
+      <div class="section-underline"></div>
 
-  <div>
-   <p class="subtitle">Site Reliability Engineer / DevOps (AWS)</p>
+      <div class="cards">
+        <article class="card">
+          <div>
+            <div class="card-icon">☁️</div>
+            <h3>AWS Cost Optimization</h3>
+            <p>
+              Implemented AWS cost-optimization strategies, reducing monthly cloud spend by up to 20% while improving resource utilization and reliability.
+            </p>
+          </div>
+          <a href="#">View Details →</a>
+        </article>
 
-   <h1>Hi, I'm Krushna Sharma</h1>
+        <article class="card">
+          <div>
+            <div class="card-icon">⚙️</div>
+            <h3>GitHub Actions CI/CD Pipelines</h3>
+            <p>
+              Designed and deployed CI/CD pipelines using GitHub Actions to automate build, test, and deployment workflows for microservices.
+            </p>
+          </div>
+          <a href="#">View Details →</a>
+        </article>
 
-   <p>
-     Site Reliability Engineer (SRE) & DevOps specialist with
-     extensive experience managing AWS infrastructure, CI/CD pipelines,
-     monitoring, logging and system reliability.
-   </p>
+        <article class="card">
+          <div>
+            <div class="card-icon">📊</div>
+            <h3>Centralized Monitoring Dashboards</h3>
+            <p>
+              Built real-time monitoring dashboards with Grafana and Prometheus to deliver production insights and improve observability.
+            </p>
+          </div>
+          <a href="#">View Details →</a>
+        </article>
+      </div>
+    </section>
 
-   <div class="actions">
-    <a class="btn primary" href="#projects">View My Projects</a>
-    <a class="btn outline" href="#contact">Contact Me</a>
-   </div>
-  </div>
+    <!-- Contact -->
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="section-underline"></div>
 
-  <div class="photo-box">
-   <img src="profile.png" class="photo">
-  </div>
+      <div class="contact-wrap">
+        <div class="contact-info">
+          <p>Feel free to reach out to me for opportunities, collaborations, or just to say hello.</p>
 
- </div>
-</section>
+          <div class="contact-details">
+            <div><span class="label">Phone:</span>+91 73857 97300</div>
+            <div><span class="label">Email:</span>krishna.sharma042@gmail.com</div>
+            <div><span class="label">Location:</span>Malegaon, Maharashtra</div>
+            <div><span class="label">GitHub:</span><a href="https://github.com/krushna1512" target="_blank">github.com/krushna1512</a></div>
+            <div><span class="label">LinkedIn:</span><a href="#" target="_blank">linkedin.com/in/your-profile</a></div>
+          </div>
+        </div>
 
-<section id="about">
- <div class="container">
-  <h2 class="divider-title">About Me</h2>
+        <form class="contact-form">
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input id="name" type="text" placeholder="Your name" />
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="Your email" />
+          </div>
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Your message"></textarea>
+          </div>
+          <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
 
-  <div class="card">
-   <p>
-     I’m a Site Reliability Engineer and DevOps specialist with experience in AWS cloud
-     infrastructure, CI/CD automation, monitoring & observability, and system reliability.
-   </p>
-  </div>
- </div>
-</section>
-
-<section id="projects">
- <div class="container">
-  <h2 class="divider-title">Recent Projects</h2>
-
-  <div class="projects">
-
-   <div class="card">
-    <i class="fa-solid fa-gear project-icon"></i>
-    <h3>AWS Cost Optimization</h3>
-    <p>Reduced AWS costs by 20% through rightsizing & RI planning.</p>
-   </div>
-
-   <div class="card">
-    <i class="fa-brands fa-github project-icon"></i>
-    <h3>GitHub Actions CI/CD</h3>
-    <p>Automated build, testing & deployments with Blue-Green strategy.</p>
-   </div>
-
-   <div class="card">
-    <i class="fa-solid fa-chart-line project-icon"></i>
-    <h3>Centralized Monitoring</h3>
-    <p>Developed Grafana + Loki dashboards for API performance tracking.</p>
-   </div>
-
-  </div>
- </div>
-</section>
-
-<section id="contact">
- <div class="container">
-  <h2 class="divider-title">Contact</h2>
-
-  <div class="contact-grid">
-
-   <div class="card">
-    <p><i class="fa-solid fa-phone"></i> +91 7385797300</p>
-    <p><i class="fa-solid fa-envelope"></i> krishna.sharma042@gmail.com</p>
-    <p><i class="fa-solid fa-location-dot"></i> Malegaon, Maharashtra</p>
-
-    <p><i class="fab fa-github"></i> github.com/krushna1512</p>
-    <p><i class="fab fa-linkedin"></i> linkedin.com/in/krushna-sharma-774633140/</p>
-   </div>
-
-   <div class="card">
-    <form action="https://formsubmit.co/YOUR_EMAIL" method="POST">
-     <input type="hidden" name="_captcha" value="false">
-
-     <label>Name</label>
-     <input type="text" name="name" required>
-
-     <label>Email</label>
-     <input type="email" name="email" required>
-
-     <label>Message</label>
-     <textarea name="message" rows="4" required></textarea>
-
-     <br><br>
-     <button type="submit">Send Message</button>
-    </form>
-   </div>
-
-  </div>
- </div>
-</section>
-
-<footer>
- © <span id="year"></span> Krushna Sharma — All Rights Reserved
-</footer>
-
-<script>
-document.getElementById("year").innerText = new Date().getFullYear();
-</script>
-
+  <footer>
+    © 2026 Krushna Sharma. All rights reserved.
+  </footer>
 </body>
 </html>
