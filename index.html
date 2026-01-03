@@ -965,6 +965,91 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* ---- HERO DETAILS LIST ---- */
+
+        .hero-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin-top: .8rem;
+        }
+
+        .hero-details ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .hero-details li {
+            margin-bottom: .45rem;
+            font-size: .93rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+            opacity: 0;
+            transform: translateX(-10px);
+            animation: fadeInHero .6s ease forwards;
+        }
+
+        .hero-details li::before {
+            content: '•';
+            color: var(--primary);
+            font-size: 1.3rem;
+            line-height: 0;
+        }
+
+        .hero-details li span {
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        /* stagger animation */
+        .hero-details li:nth-child(1) {
+            animation-delay: .1s
+        }
+
+        .hero-details li:nth-child(2) {
+            animation-delay: .2s
+        }
+
+        .hero-details li:nth-child(3) {
+            animation-delay: .3s
+        }
+
+        .hero-details li:nth-child(4) {
+            animation-delay: .4s
+        }
+
+        .hero-details ul:nth-child(2) li:nth-child(1) {
+            animation-delay: .5s
+        }
+
+        .hero-details ul:nth-child(2) li:nth-child(2) {
+            animation-delay: .6s
+        }
+
+        .hero-details ul:nth-child(2) li:nth-child(3) {
+            animation-delay: .7s
+        }
+
+        .hero-details ul:nth-child(2) li:nth-child(4) {
+            animation-delay: .8s
+        }
+
+        @keyframes fadeInHero {
+            to {
+                opacity: 1;
+                transform: translateX(0)
+            }
+        }
+
+        /* Mobile layout */
+        @media(max-width:700px) {
+            .hero-details {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 
@@ -992,10 +1077,23 @@
             <div class="hero-text">
                 <h1>Hi, I'm Krushna Sharma</h1>
                 <h2>Site Reliability Engineer / DevOps (AWS)</h2>
-                <p>
-                    Site Reliability Engineer (SRE) and DevOps specialist with 4+ years of experience in managing AWS cloud
-                    infrastructure, automating CI/CD pipelines, and improving system reliability.
-                </p>
+                <div class="hero-details">
+
+                    <ul>
+                        <li><span>Role :</span> Site Reliability / DevOps Engineer</li>
+                        <li><span>Nationality :</span> Indian</li>
+                        <li><span>Freelance :</span> Available</li>
+                        <li><span>New Opportunity :</span> Always</li>
+                    </ul>
+
+                    <ul>
+                        <li><span>Address :</span> Pune, Maharashtra</li>
+                        <li><span>Languages :</span> English, Marathi, Hindi</li>
+                        <li><span>Email :</span> krishna.sharma042@gmail.com</li>
+                        <li><span>Connect :</span> LinkedIn</li>
+                    </ul>
+
+                </div>
                 <div class="hero-buttons">
                     <!-- Resume Download Button -->
                     <a href="resume.pdf" class="btn-primary" download>
